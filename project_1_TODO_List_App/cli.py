@@ -4,10 +4,10 @@ now = time.strftime("%B %d, %Y %H:%M:%S")
 print(f"It is {now}")
 prompt_input_action:str = "Type add, show, edit, complete, exit: "
 while True:
-    user_action: str = input(prompt_input_action).strip().lower()  # TODO: "Type add, show, edit, complete, exit: "
+    user_action: str = input(prompt_input_action).strip().lower()
 
     if user_action.startswith('add'):
-            todos_list: list[str] = functions.read_todos() # () as it's a function call
+            todos_list: list[str] = functions.read_todos()
             todos_list.append(user_action[4:]+ '\n')
             functions.write_todos(todos_list)
 
@@ -25,7 +25,7 @@ while True:
             todos_list: list[str] = functions.read_todos()
 
             new_todo:str = input("Enter a New todo: ")
-            try: # edit 2
+            try:
                 todos_list[ int(user_action[5:]) -1 ]= new_todo  + '\n'
                 print("The todo is edited successfully")
             except ValueError:
@@ -38,7 +38,7 @@ while True:
 
     elif user_action.startswith('complete'):
             todos_list: list[str] = functions.read_todos()
-            try: # complete 5
+            try:
                 return_pop = todos_list.pop(int(user_action [9:]) - 1).strip('\n')
                 print(f"You complete {return_pop} task successfully :)")
 
