@@ -5,7 +5,7 @@ print(f"It is {now}")
 prompt_input_action:str = "Type add, show, edit, complete, exit: "
 while True:
     user_action: str = input(prompt_input_action).strip().lower()
-
+# test if github.dev is useful in some scenarios
     if user_action.startswith('add'):
             todos_list: list[str] = functions.read_todos()
             todos_list.append(user_action[4:]+ '\n')
