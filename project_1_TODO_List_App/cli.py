@@ -1,5 +1,5 @@
 import functions # local module
-import time # global module
+import time # one of global modules
 now = time.strftime("%B %d, %Y %H:%M:%S")
 print(f"It is {now}")
 prompt_input_action:str = "Type add, show, edit, complete, exit: "
